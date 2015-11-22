@@ -1,0 +1,33 @@
+{
+  "name": "gsearch",
+  "version": "1.0.0",
+  "description": "Google autocomplete suggestions",
+  "main": "src/gsearch.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codenameyau/gsearch.git"
+  },
+  "keywords": [
+    "google",
+    "autocomplete",
+    "search",
+    "suggestions"
+  ],
+  "author": "Jorge Yau <codenameyau@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codenameyau/gsearch/issues"
+  },
+  "homepage": "https://github.com/codenameyau/gsearch#readme"
+}

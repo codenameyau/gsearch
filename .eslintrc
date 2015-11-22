@@ -1,0 +1,163 @@
+{
+
+  /******************************************************************
+  * JAVASCRIPT ENVIRONMENT
+  *******************************************************************/
+  "parser": "babel-eslint",
+
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true,
+    "browser": true,
+    "jasmine": false,
+    "jest": false,
+    "phantomjs": false,
+    "protractor": false,
+    "jquery": false
+  },
+
+  "ecmaFeatures": {
+      "modules": false,
+      "jsx": false
+  },
+
+
+  /******************************************************************
+  * GLOBAL DEFINITIONS
+  *******************************************************************/
+  "globals": {
+      "angular": false,
+      "THREE": false
+  },
+
+
+  /******************************************************************
+  * OVERRIDE RULES: 0 => OFF,  1 => WARNING,  2 => ERROR
+  *******************************************************************/
+  "rules": {
+
+    // STRICT MODE
+    "strict": [2, "global"],
+
+    // JSDOC
+    "require-jsdoc": 0,
+    "valid-jsdoc": 0,
+
+    // STYLISTIC
+    "camelcase": 1,
+    "comma-spacing": 1,
+    "comma-style": [1, "last"],
+    "eol-last": 1,
+    "indent": [0, 2],
+    "max-nested-callbacks": [1, 4],
+    "new-cap": 1,
+    "no-continue": 0,
+    "no-inline-comments": 0,
+    "no-lonely-if": 1,
+    "no-mixed-spaces-and-tabs": 1,
+    "no-multiple-empty-lines": [0, { "max": 2 }],
+    "no-new-object": 1,
+    "no-spaced-func": 1,
+    "no-underscore-dangle": 0,
+    "operator-assignment": [0, "always"],
+    "quote-props": [0, "consistent-as-needed", { "keywords": true }],
+    "quotes": [1, "single"],
+    "semi": [2, "always"],
+    "space-after-keywords": 1,
+    "space-before-blocks": 1,
+    "space-unary-ops": 1,
+    "wrap-regex": 1,
+
+    // BEST PRACTICES
+    "block-scoped-var": 2,
+    "curly": 2,
+    "dot-notation": 1,
+    "eqeqeq": 2,
+    "guard-for-in": 2,
+    "no-else-return": 0,
+    "no-eval": 1,
+    "no-extra-bind": 1,
+    "no-fallthrough": 1,
+    "no-floating-decimal": 1,
+    "no-implicit-coercion": 1,
+    "no-implied-eval": 1,
+    "no-invalid-this": 0,
+    "no-iterator": 1,
+    "no-labels": 1,
+    "no-lone-blocks": 1,
+    "no-loop-func": 1,
+    "no-multi-spaces": 1,
+    "no-multi-str": 1,
+    "no-native-reassign": 1,
+    "no-new-func": 1,
+    "no-new-wrappers": 1,
+    "no-param-reassign": 0,
+    "no-proto": 1,
+    "no-redeclare": 1,
+    "no-return-assign": 1,
+    "no-self-compare": 1,
+    "no-sequences": 1,
+    "no-throw-literal": 1,
+    "no-unused-expressions": 1,
+    "no-useless-call": 1,
+    "no-useless-concat": 1,
+    "radix": 1,
+    "yoda": 1,
+
+    // VARIABLES
+    "no-delete-var": 2,
+    "no-shadow-restricted-names": 2,
+    "no-shadow": 2,
+    "no-undef": 2,
+    "no-unused-vars": 1,
+    "no-use-before-define": 2,
+
+    // NODE / COMMONJS
+    "callback-return": 1,
+    "global-require": 1,
+    "handle-callback-err": 1,
+    "no-mixed-requires": 1,
+    "no-path-concat": 1,
+
+    // POSSIBLE ERRORS
+    "comma-dangle": 1,
+    "no-cond-assign": 1,
+    "no-console": 0,
+    "no-constant-condition": 1,
+    "no-control-regex": 1,
+    "no-debugger": 2,
+    "no-dupe-args": 2,
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-empty-character-class": 2,
+    "no-empty": 1,
+    "no-ex-assign": 1,
+    "no-extra-boolean-cast": 1,
+    "no-extra-parens": 0,
+    "no-extra-semi": 1,
+    "no-func-assign": 2,
+    "no-inner-declarations": 1,
+    "no-invalid-regexp": 2,
+    "no-irregular-whitespace": 1,
+    "no-negated-in-lhs": 1,
+    "no-obj-calls": 2,
+    "no-regex-spaces": 1,
+    "no-sparse-arrays": 1,
+    "no-unreachable": 2,
+    "use-isnan": 1,
+    "valid-typeof": 2,
+    "no-unexpected-multiline": 1,
+
+    // ES6 SPECIFIC
+    "arrow-parens": 1,
+    "arrow-spacing": 1,
+    "constructor-super": 1,
+    "no-class-assign": 1,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "no-this-before-super": 2,
+    "require-yield": 1
+
+  }
+}
