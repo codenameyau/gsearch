@@ -7,6 +7,7 @@
 
 var http = require('http');
 var querystring = require('querystring');
+var parser = require('./parser');
 
 
 /********************************************************************
@@ -20,12 +21,6 @@ var protocols = {
   'https': 'https://'
 };
 
-var formats = {
-  'json': 'firefox',
-  'xml': 'toolbar',
-  'jsonp': 'youtube'
-};
-
 var engines = {
   'google': 'google search',
   'youtube': 'yt'
@@ -35,7 +30,7 @@ var engines = {
 var protocol = 'http://';
 
 // Public properties.
-exports.client = formats.json;
+exports.client = parser.formats.json;
 exports.engine = engines.google;
 exports.language = 'en';
 
@@ -43,18 +38,13 @@ exports.language = 'en';
 /********************************************************************
 * MODULE METHODS
 *********************************************************************/
-var formatData = function(data) {
-
-};
-
-
 exports.setProtocol = function(value) {
   protocol = protocols[value] || protocols.http;
 };
 
 
 exports.output = function(format) {
-  exports.client = formats[format] || formats.json;
+  exports.client = parser.formats[format] || parser.formats.json;
 };
 
 
@@ -64,7 +54,7 @@ exports.setEngine = function(value) {
 
 
 exports.suggest = function(searchTerm, callback) {
-  // Store format in variable in case it's updated asynchronously.
+  // Store format locally in case it's updated asynchronously.
   var format = exports.client;
 
   var query = '?' + querystring.stringify({
@@ -76,15 +66,15 @@ exports.suggest = function(searchTerm, callback) {
 
   var url = protocol + SEARCH_RESOURCE + query;
   var req = http.get(url, function(res) {
-    // Send back data as whole rather than stream.
+
+    // Send back data as whole rather than stream chunks.
     var data = '';
     res.on('data', function(chunk) {
       data += chunk;
     });
 
     res.on('end', function() {
-      console.log(format + ' ' + exports.client);
-      return callback(null, formatData(data, format), res);
+      return callback(null, parser.parse(data, format), res);
     });
   });
 
