@@ -43,6 +43,11 @@ exports.language = 'en';
 /********************************************************************
 * MODULE METHODS
 *********************************************************************/
+var formatData = function(data) {
+
+};
+
+
 exports.setProtocol = function(value) {
   protocol = protocols[value] || protocols.http;
 };
@@ -59,16 +64,18 @@ exports.setEngine = function(value) {
 
 
 exports.suggest = function(searchTerm, callback) {
+  // Store format in variable in case it's updated asynchronously.
+  var format = exports.client;
+
   var query = '?' + querystring.stringify({
     q: searchTerm,
-    client: exports.client,
+    client: format,
     ds: exports.engine,
     hl: exports.language
   });
 
   var url = protocol + SEARCH_RESOURCE + query;
   var req = http.get(url, function(res) {
-
     // Send back data as whole rather than stream.
     var data = '';
     res.on('data', function(chunk) {
@@ -76,8 +83,8 @@ exports.suggest = function(searchTerm, callback) {
     });
 
     res.on('end', function() {
-      // Google returns weird json, so format it.
-      return callback(null, JSON.parse(data)[1], res);
+      console.log(format + ' ' + exports.client);
+      return callback(null, formatData(data, format), res);
     });
   });
 
