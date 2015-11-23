@@ -16,14 +16,14 @@ var parser = require('./parser');
 var HOST_NAME = 'suggestqueries.google.com';
 var SEARCH_RESOURCE = HOST_NAME + '/complete/search';
 
-var protocols = {
-  'http': 'http://',
-  'https': 'https://'
-};
-
 var engines = {
   'google': 'google search',
   'youtube': 'yt'
+};
+
+var protocols = {
+  'http': 'http://',
+  'https': 'https://'
 };
 
 // Private properties.

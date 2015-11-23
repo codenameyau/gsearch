@@ -16,13 +16,11 @@ describe('gsearch', function() {
     assert.strictEqual(gsearch.client, 'youtube');
   });
 
-
   it('should not change the output for an invalid format', function() {
     gsearch.output('loltext');
     assert.notEqual(gsearch.format, 'loltext');
     assert.strictEqual(gsearch.client, 'firefox');
   });
-
 
   it('should be able to change the search engine', function() {
     gsearch.setEngine('youtube');
@@ -31,6 +29,5 @@ describe('gsearch', function() {
     gsearch.setEngine('google');
     assert.strictEqual(gsearch.engine, 'google search');
   });
-
 
 });
