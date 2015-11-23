@@ -1,6 +1,6 @@
 {
   "name": "gsearch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google autocomplete suggestions",
   "main": "src/gsearch.js",
   "directories": {
