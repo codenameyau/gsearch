@@ -1,18 +1,17 @@
 # gsearch
 
-NPM package for Google autocomplete suggestions.
+[![NPM version](http://img.shields.io/npm/v/gsearch.svg)](https://www.npmjs.org/package/gsearch)
+[![license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/codenameyau/gsearch/blob/master/LICENSE)
 
-Supports the following search suggestions:
+Google autocomplete suggestions. Supports google and youtube search.
 
-- `google`
-- `youtube`
-
+**Installation**
 ```
 npm install gsearch --save
 ```
 
 ## Examples
-More detailed examples can be found in `example/`.
+More detailed examples can be found in the [example folder](https://github.com/codenameyau/gsearch/tree/master/example).
 
 ```javascript
 'use strict';
